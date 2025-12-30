@@ -1,0 +1,21 @@
+{
+  "type": "orderbook",
+  "selling": {
+    "type": "native",
+    "code": "XLM"
+  },
+  "buying": {
+    "type": "native",
+    "code": "XLM"
+  },
+  "horizon_response": {
+    "bids": [],
+    "asks": [],
+    "base": {
+      "asset_type": "native"
+    },
+    "counter": {
+      "asset_type": "native"
+    }
+  }
+}
