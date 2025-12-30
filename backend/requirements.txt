@@ -3,9 +3,8 @@ uvicorn
 stellar-sdk
 requests
 aiohttp
-pandas
-numpy
-networkx
+pandas==2.2.2
+numpy==1.26.4
 matplotlib
 jupyter
 stellar-sdk==11.0.0

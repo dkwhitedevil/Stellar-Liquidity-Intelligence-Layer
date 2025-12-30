@@ -1,0 +1,60 @@
+# ===============================
+# Python Virtual Environment
+# ===============================
+venv/
+.env/
+.env.*
+*.env
+
+# ===============================
+# Python Cache & Bytecode
+# ===============================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ===============================
+# Build / Distribution Artifacts
+# ===============================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ===============================
+# Logs
+# ===============================
+*.log
+
+# ===============================
+# OS / Editor Noise
+# ===============================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ===============================
+# Jupyter / IPython
+# ===============================
+.ipynb_checkpoints/
+
+# ===============================
+# Test & Coverage Artifacts
+# ===============================
+.coverage
+htmlcov/
+.pytest_cache/
+
+# ===============================
+# Local Runtime Artifacts
+# ===============================
+*.sqlite3
+*.db
+
+# ===============================
+# Optional: Ignore local config overrides
+# ===============================
+config/local*.json
