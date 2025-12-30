@@ -32,3 +32,35 @@ def save_graph_snapshot(G, name="graph"):
         pickle.dump(G, f)
 
     return path
+
+
+def load_latest_graph():
+    out = Path("graph_snapshots")
+    if not out.exists():
+        raise FileNotFoundError("No graph snapshots found")
+
+    files = sorted(out.glob("*.gpickle"), key=lambda p: p.stat().st_mtime, reverse=True)
+    if not files:
+        raise FileNotFoundError("No graph snapshot files found")
+
+    latest = files[0]
+
+    # Try to load via networkx gpickle reader
+    try:
+        import networkx.readwrite.gpickle as gpickle
+        G = gpickle.read_gpickle(latest)
+        return G
+    except Exception:
+        pass
+
+    try:
+        if hasattr(nx, "read_gpickle"):
+            return nx.read_gpickle(latest)
+    except Exception:
+        pass
+
+    # Fallback: use pickle
+    import pickle
+    with open(latest, "rb") as f:
+        G = pickle.load(f)
+    return G
