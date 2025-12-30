@@ -6,6 +6,7 @@ aiohttp
 pandas==2.2.2
 numpy==1.26.4
 matplotlib
+networkx==3.3
 jupyter
 stellar-sdk==11.0.0
 requests==2.31.0
