@@ -6,4 +6,5 @@ __all__ = [
     "policy_filters",
     "route_registry",
     "advise_routes",
+    "recommendation",
 ]

@@ -1,0 +1,11 @@
+{
+  "seed": 42,
+  "num_assets": 10,
+  "n_per_path": 20,
+  "summary": {
+    "baseline_avg_success": 0.8222222222222222,
+    "slil_avg_success": 0.7499999999999999,
+    "baseline_avg_slip": 0.028324421276566546,
+    "slil_avg_slip": 0.03982668552586437
+  }
+}

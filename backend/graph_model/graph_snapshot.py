@@ -1,4 +1,3 @@
-import networkx as nx
 from pathlib import Path
 from datetime import datetime
 
@@ -11,7 +10,7 @@ def save_graph_snapshot(G, name="graph"):
     path = out / f"{name}_{ts}.gpickle"
 
     # Use the gpickle writer from networkx.readwrite for compatibility across nx versions
-    # Try various ways to write a gpickle to be compatible across environments
+    # Try to import networkx lazily to avoid hard dependency during verification
     try:
         import networkx.readwrite.gpickle as gpickle
         gpickle.write_gpickle(G, path)
@@ -20,6 +19,7 @@ def save_graph_snapshot(G, name="graph"):
         pass
 
     try:
+        import networkx as nx
         if hasattr(nx, "write_gpickle"):
             nx.write_gpickle(G, path)
             return path
@@ -45,7 +45,7 @@ def load_latest_graph():
 
     latest = files[0]
 
-    # Try to load via networkx gpickle reader
+    # Try to load via networkx gpickle reader (import lazily)
     try:
         import networkx.readwrite.gpickle as gpickle
         G = gpickle.read_gpickle(latest)
@@ -54,6 +54,7 @@ def load_latest_graph():
         pass
 
     try:
+        import networkx as nx
         if hasattr(nx, "read_gpickle"):
             return nx.read_gpickle(latest)
     except Exception:

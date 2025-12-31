@@ -1,0 +1,11 @@
+.dashboard-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.panel{padding:12px;border:1px solid var(--muted);border-radius:8px}
+.cards{display:flex;gap:12px}
+.score-card{flex:1;padding:12px;border-radius:6px;background:var(--panel)}
+.score-value{font-weight:700;font-size:18px;margin:8px 0}
+.score-note{font-size:12px;color:var(--muted)}
+.forecast-card{padding:10px;border-radius:6px;background:var(--panel);margin-bottom:8px}
+.forecast-note{font-size:12px;color:var(--muted);margin-top:8px}
+.routing-empty{padding:12px;color:var(--muted)}
+.routing-item{padding:10px;border-radius:6px;border:1px dashed var(--muted);margin-bottom:8px}
+.panel.error{border-color:#ff6b6b;color:#ffb4b4;background:linear-gradient(180deg, rgba(255,107,107,0.04), transparent)}

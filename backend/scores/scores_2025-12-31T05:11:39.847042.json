@@ -1,0 +1,30 @@
+[
+  {
+    "timestamp": "2025-12-31T04:40:00+00:00",
+    "entity": "credit_alphanum4/native",
+    "score_type": "reliability",
+    "value": 0.5,
+    "explanation": "Lower variability in activity and liquidity implies higher reliability."
+  },
+  {
+    "timestamp": "2025-12-31T04:40:00+00:00",
+    "entity": "credit_alphanum4/native",
+    "score_type": "stability",
+    "value": 0.6578238487961259,
+    "explanation": "Lower observed price volatility implies higher stability."
+  },
+  {
+    "timestamp": "2025-12-30T17:40:00+00:00",
+    "entity": "native/credit_alphanum12",
+    "score_type": "reliability",
+    "value": 0.5,
+    "explanation": "Lower variability in activity and liquidity implies higher reliability."
+  },
+  {
+    "timestamp": "2025-12-30T17:40:00+00:00",
+    "entity": "native/credit_alphanum12",
+    "score_type": "stability",
+    "value": 0.5,
+    "explanation": "Lower observed price volatility implies higher stability."
+  }
+]

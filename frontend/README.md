@@ -1,12 +1,59 @@
-# React + Vite
+# SLIL Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This frontend implements the **Stellar Liquidity Intelligence Layer (SLIL)** frontend specification — submission-grade, research-focused, and conservative.
 
-Currently, two official plugins are available:
+## Top-level structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Header / Navbar
+- Project Overview
+- Corridor Selection (User Input)
+- System State Dashboard
+  - Reliability & Stability
+  - Forecasts & Risk
+  - Routing Advisories (handles empty state)
+- Graph & Data Transparency
+- Simulation & Evaluation
+- Limitations & Conservatism
+- Future Work
+- Footer
 
+## Important guardrails
+- No wallet connect UI
+- No amount inputs
+- No execute/send/confirm buttons
+- No fee optimization UI
+- No best-path selector or auto-routing
+
+## Submission checklist
+- Corridor selector exists
+- Empty states are explained
+- 0 advisories handled gracefully
+- Scores & forecasts explained
+- Conservatism clearly stated
+- No execution UI
+- Research framing present
+- Future work section included
+
+## Development
+Run:
+
+```
+cd frontend
+npm install
+npm run dev
+```
+
+Run the backend in a separate terminal:
+
+```
+cd backend
+pip install -r requirements.txt
+uvicorn api.main:app --reload --port 8000
+```
+
+The frontend will query `http://localhost:8000/api/corridor` by default. You can override the backend base URL by setting `VITE_API_BASE` in the frontend environment (e.g., `VITE_API_BASE=http://localhost:8000 npm run dev`).
+
+This app is intentionally read-only and provides research-grade transparency, clear empty states, and conservative advisory logic per the specification.
 ## React Compiler
 
 The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).

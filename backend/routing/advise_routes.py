@@ -45,15 +45,24 @@ def run_advisory(source, destination, max_hops=3):
         avg_s = sum(m["stability"] for m in metrics) / len(metrics)
         risk = risk_penalty(metrics)
 
+        # Compute per-edge penalty from graph aggregated attributes
+        edge_penalty = 0.0
+        try:
+            from routing.advisory_scoring import compute_path_edge_penalty
+            edge_penalty = compute_path_edge_penalty(G, path)
+        except Exception:
+            edge_penalty = 0.0
+
         advisories.append(
             RouteAdvisory(
                 timestamp=datetime.utcnow(),
                 source=source,
                 destination=destination,
                 path=path,
-                score=advisory_score(avg_r, avg_s, risk),
+                score=advisory_score(avg_r, avg_s, risk, edge_penalty=edge_penalty),
                 risk=risk,
-                explanation="Advisory score balances historical reliability, stability, and forecast uncertainty."
+                explanation=(f"Advisory score balances historical reliability, stability, and forecast uncertainty. "
+                             f"Edge penalty={edge_penalty:.3f}"),
             )
         )
 

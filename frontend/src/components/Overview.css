@@ -1,0 +1,5 @@
+.overview{padding:12px;border:1px solid var(--muted);border-radius:8px;margin-bottom:12px}
+.overview .lead{font-size:15px}
+.phase-diagram{margin-top:12px}
+.phase-diagram .diagram{margin-top:6px;font-weight:600}
+.note{font-size:13px;color:var(--muted);margin-top:10px}
